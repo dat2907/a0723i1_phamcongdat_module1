@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <h2>Kiểm tra số nguyên</h2>
+    <label for="songuyen">Nhập số A:</label>
+    <input type="number" name="" id="soA">
+    <br>
+    <input type="button" name="" id="" value="Kiểm tra" onclick="cal()">
+    <p id="result"></p>
+</form>
+<script>
+    function cal(){
+        let so_a=parseInt(document.getElementById("soA").value);
+        if (so_a==0){
+            document.getElementById("result").innerHTML="Số vừa nhập là số 0"
+        } else
+            so_a > 0 ? document.getElementById("result").innerHTML="<strong>Số A là số lớn hơn hợn 0</strong>" : document.getElementById("result").innerHTML="<strong>Số A là số bé hơn 0</strong>"
+    }
+</script>
+</body>
+</html>

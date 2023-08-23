@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width-width,initial-scale=1.0">
+    <title>document</title>
 </head>
 <body>
-
+    <form action=" ">
+        <h2>Chuyển đổi từ độ C sáng độ F</h2>
+        <label for="sodo">Nhập độ C:</label>
+        <input type="number" name=" "id="C">
+        <br>
+        <input type="button"name="" id="" value="Chuyển đổi " onclick="cal()">
+        <p id="res
+        ult"></p>
+    </form>
+<script>
+    function cal() {
+        let FC=parseFloat(document.getElementById("C").value)
+        document.getElementById("result").innerHTML="Độ F:"+(FC+9/5+32);
+    }
+</script>
 </body>
 </html>

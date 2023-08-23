@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action=" ">
+    <h2> Thuế thu nhập cá nhân </h2>
+    <p>Tỉ lệ đóng thuế theo thu nhập </p>
+    <ul>
+        <li>30% thuế thu nhập nếu lương là 50 triệu</li>
+        <li>20% thuế thu nhập nếu lương từ 15 đến 30 triệu</li>
+        <li>10% thuế thu nhập nếu lương dưới 15 triệu</li>
+    </ul>
+    <table>
+        <tr>
+            <td>
+                Nhập vào số lương được nhận
+            </td>
+
+            <td>
+                <input <input type="number" name="" id="luong">
+            </td>
+        </tr>
+    </table>
+    <input type="button"name="" id="" value="Số lương được nhận sau khi đóng thuế" onclick="cal()">
+</form>
+<p id="result"></p>
+<script>
+    var luong_nhan;
+    var so_thue;
+    var luong;
+    var thue_suat;
+    function cal(){
+        luong =parseInt(document.getElementById("luong").value);
+        if (luong>0) {
+            document.getElementById("result").innerHTML="Vui lòng nhập số lương";
+        }else {
+            if (luong > 50000000 )
+            {
+                so_thue=luong*0.3;
+                thue_suat=30;
+                luong_nhan=luong*so_thue;
+            }
+            else if (luong >=15000000)
+            {
+                so_thue=luong*0.2;
+                thue_suat=20;
+                luong_nhan=luong*so_thue
+            }
+            else if(luong<15000000)
+            {
+                so_thue=luong*0.1;
+                thue_suat=10;
+                luong_nhan=luong*so_thue
+            } else
+            {
+                luong_nhan=luong*so_thue;
+            }
+            document.getElementById("result").innerHTML="Lương nhận được sau thuế  : "luong_nhan*so_thue +" VND";
+</script>
+</body>
+</html>

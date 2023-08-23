@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
 </head>
 <body>
+<h1>Giải phương trình bậc 2</h1>
+<table>
+    <tr>
+        <p>Phương trình bậc 2 có dạng ax<sup>2</sup> + bx + c = 0 (a # 0)</p>
+    </tr>
+    <tr>
+        <td>a = <input type="text" id="bienA"/></td>
+        <td>b = <input type="text" id="bienB"/></td>
+        <td>c = <input type="text" id="bienC"/></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="ketQua()">Kết quả</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="result"></td>
+    </tr>
+</table>
 
+<script>
+    function ketQua() {
+        let a = +document.getElementById("bienA").value;
+        let b = +document.getElementById("bienB").value;
+        let c = +document.getElementById("bienC").value;
+        let delta = Math.pow(b, 2) - 4 * a * c;
+        let x1 = (b * -1 + Math.sqrt(delta)) / (2 * a);
+        let x2 = (b * -1 - Math.sqrt(delta)) / (2 * a);
+        let x = (b * -1) / (2 * a);
+        if (delta < 0) {
+            document.getElementById("result").innerText = "Phương trình vô nghiệm";
+        } else if (delta === 0) {
+            document.getElementById("result").innerText = "Phương trình có nghiệm kép x1 = x2 =" + x;
+        } else {
+            document.getElementById("result").innerText = "Phương trình có hai nghiệm: x1= " + x1 + "và x2= " + x2;
+        }
+    }
+</script>
 </body>
 </html>

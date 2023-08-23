@@ -3,18 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>>
+    <title>Document</title>
 </head>
 <body>
     <form action=" ">
         <h2>Tính giá điện</h2>
         <p>Giá điện </p>
-        <li>Bậc 1:</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <ul>
+        <li>Bậc 1 từ 0-51kWh : 1600đ</li>
+        <li>Bậc 2 từ 51-100kWh : 1700đ</li>
+        <li>Bậc 3 từ 101-200kWh : 2000đ</li>
+        <li>Bậc 4 từ 201-300kWh : 2500đ</li>
+        <li>Bậc 5 từ 301-400kWh : 2800đ</li>
+        <li>Bậc 6 từ 401kWh trở lên : 3000đ</li>
+        </ul>
+        <table>
+            <tr>
+                <td>
+                    Nhập vào số điện đã dùng
+                </td>
+
+                <td>
+                    <input <input type="number" name="" id="kWh">
+                </td>
+            </tr>
+        </table>
+        <input type="button"name="" id="" value="Tổng tiền" onclick="cal()">
     </form>
+    <p id="result"></p>
+<script>
+    var so_kwh
+    var bac1=1600,bac2=1700,bac3=2000,bac4=2500,bac5=2800,bac6=3000;
+    var gia_dien;
+    function cal(){
+        so_kwh =parseInt(document.getElementById("kWh").value);
+        if (so_kwh<0) {
+            document.getElementById("result").innerHTML="Vui lòng nhập số kWh";
+        } else {
+            if (so_kwh < 51 )
+            {
+                gia_dien = bac1*so_kwh;
+            }
+            else if (so_kwh <100)
+            {
+                gia_dien = 50*bac1+((so_kwh-50)*bac2);
+            }
+            else if (so_kwh <200)
+            {
+                gia_dien = 50*bac1+(50*bac2)+((so_kwh-100)*bac3);
+            }
+            else if ( so_kwh <300)
+            {
+                gia_dien = 50*bac1+(50*bac2)+(100*bac3)+((so_kwh-200)*bac4);
+            }
+            else if ( so_kwh <400)
+            {
+                gia_dien = 50*bac1+(50*bac2)+(100*bac3)+(100*bac4)+((so_kwh-300)*bac5);
+            }
+            else if ( so_kwh > 400)
+            {
+                gia_dien = 50*bac1+(50*bac2)+(100*bac3)+(100*bac4)+(100*bac5)+((so_kwh-300)*bac6);
+            }
+            else
+            {
+                gia_dien =so_kwh*bac1+so_kwh*bac2+so_kwh*bac3+so_kwh*bac4+so_kwh*bac5+(so_kwh-400)*bac6 ;
+            }
+            document.getElementById("result").innerHTML="Tiền điện : " +gia_dien +" VND";
+
+        }
+    }
+</script>
 </body>
 </html>

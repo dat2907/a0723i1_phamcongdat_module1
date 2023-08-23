@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
 </head>
 <body>
-
+<h2>Tính diện tích hình chữ nhật</h2>
+<table>
+    <tr>
+        <td>
+            <label>Nhập chiều dài hình chữ nhật (m)
+                <input type="text" id="chieuDai"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                Nhập chiều rộng hình chữ nhật (m)
+                <input type="text" id="chieuRong"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="tinhDienTich()">
+                Đáp án
+        </td>
+    </tr>
+    <tr>
+        <td id="dienTich"></td>
+    </tr>
+</table>
+<script>
+    function tinhDienTich() {
+        let chieuDai = +document.getElementById("chieuDai").value;
+        let chieuRong = +document.getElementById("chieuRong").value;
+        let dienTich = chieuDai * chieuRong;
+        document.getElementById("dienTich").innerText ="Diện tích hình chữ nhật: " + dienTich.toFixed(2) + "m2";
+    }
+</script>
 </body>
 </html>

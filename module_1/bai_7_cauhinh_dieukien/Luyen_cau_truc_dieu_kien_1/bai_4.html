@@ -7,6 +7,7 @@
 </head>
 <body>
 <form action="">
+    <h2>Tìm số lớn nhất </h2>
     <table>
         <tr>
             <td>Nhập số A:</td>
@@ -25,10 +26,10 @@
 <p id="result"></p>
 <script>
     function cal(){
-        let so_a=parseInt(document.getElementById("soA").value);
-        let so_b=parseInt(document.getElementById("soB").value);
-        let so_c=parseInt(document.getElementById("soC").value);
-        let so_max=Math.max(so_a,so_b,so_c);
+        let soa=parseInt(document.getElementById("soA").value);
+        let sob=parseInt(document.getElementById("soB").value);
+        let soc=parseInt(document.getElementById("soC").value);
+        let so_max=Math.max(soa,sob,soc);
         console.log(so_max);
         document.getElementById("result").innerHTML="Số lớn nhất là: " +so_max;
     }

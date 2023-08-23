@@ -14,7 +14,7 @@
                 Nhập điểm kiểm tra (10%):
             </td>
             <td>
-                <input type="number" name="" id="test" min="0" max="10">
+                <input type="number" name="" id="thuongki" min="0" max="10">
             </td>
         </tr>
         <tr>
@@ -22,7 +22,7 @@
                 Nhập điểm giữa kỳ (30%):
             </td>
             <td>
-                <input type="number" name="" id="mid" min="0" max="10">
+                <input type="number" name="" id="giuaki" min="0" max="10">
             </td>
         </tr>
         <tr>
@@ -30,7 +30,7 @@
                 Nhập điểm cuối kỳ (70%):
             </td>
             <td>
-                <input type="number" name="" id="final" min="0" max="10">
+                <input type="number" name="" id="cuoiki" min="0" max="10">
             </td>
         </tr>
     </table>
@@ -41,12 +41,12 @@
 <script>
     function rank()
     {
-        let diem_kt = parseInt(document.getElementById("test").value);
-        let diem_mid = parseInt(document.getElementById("mid").value);
-        let diem_final = parseInt(document.getElementById("final").value);
-        console.log(diem_kt,diem_mid,diem_final);
-        let diem_tb =diem_kt*0.2+diem_mid*0.2+diem_final*0.6
-        if (diem_kt<0||diem_mid<0||diem_final<0)
+        let diem_kt = parseInt(document.getElementById("thuongki").value);
+        let diem_giuaki = parseInt(document.getElementById("giuaki").value);
+        let diem_cuoiki = parseInt(document.getElementById("cuoiki").value);
+        console.log(diem_kt,diem_giuaki,diem_cuoiki);
+        let diem_tb =diem_kt*0.2+diem_giuaki*0.2+diem_cuoiki*0.6
+        if (diem_kt<0||diem_giuaki<0||diem_cuoiki<0)
         {
             document.getElementById("result").innerHTML="Vui lòng nhập số lớn hơn hoặc bằng 0";
         }

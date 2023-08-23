@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
 </head>
 <body>
+<h1>Giải phương trình bậc 1</h1>
+<table>
+    <tr>
+        Nhập các tham số của phương trình bậc 1 có dạng ax + b = 0
+    </tr>
+    <tr>
+        <td>a = <input type="text" id="bienA"/></td>
+    </tr>
+    <tr>
+        <td>b = <input type="text" id="bienB"/></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="ketQua()">Kết quả</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="result"></td>
+    </tr>
+</table>
 
+<script>
+    function ketQua() {
+        let bienA = +document.getElementById("bienA").value;
+        let bienB = +document.getElementById("bienB").value;
+        let x = (bienB * -1) / bienA;
+        if (bienA === 0 && bienB === 0) {
+            document.getElementById("result").innerText = "Phương trình có vô số nghiệm";
+        } else if (bienA === 0 && bienB !== 0) {
+            document.getElementById("result").innerText = "Phương trình vô nghiệm";
+        } else {
+            document.getElementById("result").innerText = "Phương trình có nghiệm duy nhất: " + x;
+        }
+    }
+</script>
 </body>
 </html>

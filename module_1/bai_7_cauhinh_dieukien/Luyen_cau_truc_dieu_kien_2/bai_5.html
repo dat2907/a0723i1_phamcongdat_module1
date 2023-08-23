@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
 </head>
 <body>
+<h1>Tính diện tích tam giác vuông</h1>
 
+<table>
+    <tr>
+        <td>
+            <label>Cạnh kề a <input type="text" id="canhKea"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Cạnh kề b <input type="text" id="canhKeb"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="tinhDienTich()" >Đáp án </button>
+        </td>
+    </tr>
+    <tr>
+        <td id="dienTich"></td>
+    </tr>
+</table>
+
+<script>
+    function tinhDienTich() {
+        let canhKea = +document.getElementById("canhKea").value;
+        let canhKeb = +document.getElementById("canhKeb").value;
+        let dienTich = (1 / 2) * (canhKea * canhKeb);
+        document.getElementById("dienTich").innerText = "Diện tích tam giác vuông: " + dienTich.toFixed(2) + "m2";
+    }
+</script>
 </body>
 </html>

@@ -6,34 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Tính lãi kép ngân hàng</h2>
-<p> Công thức tính lãi kép: A = P*(1 + r)^n</p>
-<p>Trong đó:</p>
-<ul>
-    <li>A là số tiền mà quý khách nhận được trong tương lai</li>
-    <li>P là số tiền gốc quý khách bỏ ra để đầu tư ban đầu</li>
-    <li>r là lãi suất hằng năm</li>
-    <li>n là số chu kỳ thực hiện lãi kép</li>
-</ul>
+<h2>Tính lãi ngân hàng</h2>
 <form action="">
     <table>
         <tr>
-            <td>Nhập vào số tiền góc (P):</td>
+            <td>Số tiền gửi ngân hàng :</td>
             <td><input type="number" name="" id="soP"></td>
         </tr>
         <tr>
-            <td>Nhập vào lãi suất hàng năm (r):</td>
+            <td>Lãi ngân hàng mỗi năm:</td>
             <td><input type="number" name="" id="sor"></td>
         </tr>
         <tr>
-            <td>Nhập vào chu ký thực hiện (n)</td>
+            <td>Chu kì thực hiện:</td>
             <td><input type="number" name="" id="son"></td>
         </tr>
     </table>
-    <input type="button" name="" id="" value="Tính số tiền" onclick="cal()">
+    <input type="button" name="" id="" value="Số lãi " onclick="cal()">
     <p id="result"></p>
 </form>
 <script>
+    //P:số tiền gửi ngân hàng
+    //r:lãi suất
+    //n:chu kỳ thực hiện
     function cal()
     {
         let so_P=parseInt(document.getElementById("soP").value);
@@ -41,7 +36,7 @@
         let so_n=parseInt(document.getElementById("son").value);
         if(so_P<0||so_r<0||so_n<0)
         {
-            document.getElementById("result").innerHTML="Giá trị bé hơn 0. Vui lòng nhập lại";
+            document.getElementById("result").innerHTML="Giá trị nhỏ hơn 0. Vui lòng nhập lại";
         }
         else
         {

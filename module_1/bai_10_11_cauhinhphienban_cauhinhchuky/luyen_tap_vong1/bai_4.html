@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function tim(sochiahet) {
+        let previous = 0;
+        let current = 1;
+        while (true) {
+            const next = previous + current;
+                if (next % sochiahet === 0) {
+                    return next;
+                }
+            previous = current;
+            current = next;
+        }
+    }
+    const sochiahet = 5;
+    const sochia5 = tim(sochiahet);
+    document.write(`Số đầu tiên trong dãy Fibonacci chia hết cho ${sochiahet} là: ${sochia5}`);
+</script>
+</body>
+</html>
+</body>
+</html>

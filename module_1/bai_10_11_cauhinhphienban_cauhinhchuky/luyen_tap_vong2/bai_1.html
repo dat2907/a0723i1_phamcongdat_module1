@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    let n1=0 ;
+    let n2=1 ;
+    var num ;
+    let n= parseInt(prompt(' Nhập số in ra dãy Fibonancy '))
+    for (let i = 0 ; i <=n ; i++ ) {
+        num = n1 + n2;
+        document.write(num+'<br/>')
+        n1 = n2;
+        n2 = num;
+    }
+</script>
+</body>
+</html>

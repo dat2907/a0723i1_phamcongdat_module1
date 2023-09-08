@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="number1" type="number">
+    <button onclick="Tangso()">Click me</button>
+    <p id="result"></p>
+    <script>
+        function Tangso1(number) {
+            return number + 1;
+        }
+        function Tangso() {
+            const number1 = parseInt(document.getElementById("number1").value);
+            var result1 = Tangso1(number1);
+            document.getElementById("result").innerHTML = 'Số sau khi tăng lên 1 là :' +  result1;
+        }
+    </script>
+</body>
+</html>

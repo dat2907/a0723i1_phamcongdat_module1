@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let menu = {
+            1: {name: 'Cafe', price: 20000},
+            2: {name: 'Cam vắt', price: 30000},
+            3: {name: 'Nước ép cà rốt', price: 25000},
+            4: {name: 'Nước ép cà chua', price: 25000},
+            5: {name: 'Nước lọc', price: 10000},
+            6: {name: 'Nước dừa', price: 30000}
+        };
+
+        let choice;
+        do {
+            console.log("Menu:");
+            for (let i in menu) {
+                console.log(i + ". " + menu[i].name);
+            }
+            console.log("7. Thoát");
+
+            choice = Number(prompt("Chọn một loại thức uống (nhập số):"));
+
+            if (choice >= 1 && choice <= 6) {
+                let quantity = Number(prompt("Bạn muốn mấy ly " + menu[choice].name + "?"));
+                let total = quantity * menu[choice].price;
+                console.log("Tổng số tiền bạn cần trả là " + total + " VND.");
+            }
+        }
+        while (choice != 7);
+
+    </script>
+</body>
+</html>

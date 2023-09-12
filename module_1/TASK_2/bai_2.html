@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function veTamGiacCan(h) {
+            for (let i = 0; i < h; i++) {
+                let str = '';
+                for (let j = 0; j < h - i; j++) {
+                    str += ' ';
+                }
+                for (let k = 0; k < 2 * i + 1; k++) {
+                    str += '*';
+                }
+                console.log(str);
+            }
+        }
+
+        // Gọi hàm vẽ tam giác cân với h = 5
+        veTamGiacCan(5);
+
+    </script>
+</body>
+</html>

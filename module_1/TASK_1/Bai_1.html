@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tinhThueThuNhap(luong) {
+            let thue;
+            if (luong > 15) {
+                thue = luong * 0.2;
+            } else if (luong >= 7) {
+                thue = luong * 0.1;
+            } else {
+                thue = luong * 0.05;
+            }
+            return thue;
+        }
+
+        function tinhLuongRong(luong) {
+            let thue = tinhThueThuNhap(luong);
+            let luongRong = luong - thue;
+            return luongRong;
+        }
+
+        let luong = prompt("Nhập lương của bạn (triệu VND): ");
+        luong = parseFloat(luong);
+        let thue = tinhThueThuNhap(luong);
+        let luongRong = tinhLuongRong(luong);
+
+        alert("Thuế thu nhập: " + thue + " triệu VND");
+        alert("Lương ròng: " + luongRong + " triệu VND");
+
+    </script>
+</body>
+</html>

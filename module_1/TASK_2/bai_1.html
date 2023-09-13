@@ -8,21 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        function veTamGiac(h) {
-            for (let i = 0; i < h; i++) {
-                let s = '';
-                for (let j = 0; j <= i; j++) {
-                    if (i === h - 1 || j === 0 || j === i) {
-                        s += '* ';
-                    } else {
-                        s += '  ';
-                    }
+<script>
+    function run(){
+        let n = parseFloat(prompt("Nhập vào chiều cao n"))
+        if (Number.isInteger(n) && n > 0){
+            for ( let i = 1; i <= n; i++){
+                for (let j = 1; j <= i; j++){
+                    if(i == 1 || j == 1 || i == n || j ==  i){
+                    document.write("*");
+                    } else document.write("&nbsp&nbsp");
                 }
-                console.log(s);
+                 document.write("<br>")
             }
-        }
-        veTamGiac(5);
-    </script>
+        } else alert("Mời bạn nhập giá trị nguyên dương")
+    }
+</script>
 </body>
 </html>

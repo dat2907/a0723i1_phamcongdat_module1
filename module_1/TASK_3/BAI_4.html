@@ -18,23 +18,25 @@
             6: {name: 'Nước dừa', price: 30000}
         };
 
+        \
         let choice;
         do {
-            console.log("Menu:");
+            document.write("Menu:");
             for (let i in menu) {
-                console.log(i + ". " + menu[i].name);
+                document.write(i + ". " + menu[i].name);
             }
-            console.log("7. Thoát");
+            document.write("7. Thoát");
 
             choice = Number(prompt("Chọn một loại thức uống (nhập số):"));
 
             if (choice >= 1 && choice <= 6) {
                 let quantity = Number(prompt("Bạn muốn mấy ly " + menu[choice].name + "?"));
                 let total = quantity * menu[choice].price;
-                console.log("Tổng số tiền bạn cần trả là " + total + " VND.");
+                document.write("Tổng số tiền bạn cần trả là " + total + " VND.");
             }
         }
         while (choice != 7);
+        alert()
 
     </script>
 </body>

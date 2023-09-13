@@ -8,6 +8,26 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        function maxFraction(numerators, denominators) {
+            let maxFraction = numerators[0] / denominators[0];
+            let maxIndex = 0;
 
+            for (let i = 1; i < numerators.length; i++) {
+                let currentFraction = numerators[i] / denominators[i];
+                if (currentFraction > maxFraction) {
+                    maxFraction = currentFraction;
+                    maxIndex = i;
+                }
+            }
+
+            return maxIndex;
+        }
+
+        let numerators = [5, 2, 5];
+        let denominators = [6, 3, 4];
+
+        document.write(maxFraction(numerators, denominators)); // Output: 2
+    </script>
 </body>
 </html>

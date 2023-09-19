@@ -9,18 +9,34 @@
 </head>
 <body>
     <script>
-        function findElementsNotInA(A, B) {
-            let setA = new Set(A);
-            let setB = new Set(B);
-            let difference = new Set([...setB].filter(x => !setA.has(x)));
-            return Array.from(difference).sort((a, b) => a - b);
+        let A = [1,2,3,4,5,6,7,8,9,10];
+        let B = [2,4,5,6,7,2,3,5,8,9,1,10,11,22,13,50,99,];
+        const C = [];
+        for (let i = 0; i <A.length; i++){
+            for (let j = 0; j < B.length; j++){
+                if (B[j] === A[i]){
+                    C.push(B[j]);
+                }
+            }
         }
-
-        let A = [1, 2, 3, 4, 5];
-        let B = [4, 5, 6, 7, 8];
-
-       alert(findElementsNotInA(A, B));
-
+        for (let i = 0; i < C.length; i++){
+            for (let j = 0; j <B.length ; j++){
+                if (C[i] === B[j]){
+                    for (let k = j; k < B.length;k++){
+                        B[k] = B[k+1];
+                    }
+                }
+            }
+        }
+        let missingValue = [];
+        for (let i = 0; i < B.length; i++){
+            if (B[i] !== undefined){
+                missingValue.push(B[i]);
+            }
+        }
+        for (let i = 0; i <C.length ; i++){
+            console.log(missingValue[i]);
+        }
     </script>
 </body>
 </html>

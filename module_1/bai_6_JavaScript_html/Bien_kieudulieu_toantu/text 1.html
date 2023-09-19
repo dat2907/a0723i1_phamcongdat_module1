@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        inputmonly   = prompt("NHẬP ĐIỂM MÔN LÝ :");
+        inputmonHoa  = prompt("NHẬP ĐIỂM MÔN HÓA :");
+        inputmonSinh = prompt("NHẬP ĐIỂM MÔN SINH :");
+        let Ly   = parseFloat(inputmonly);
+        let Hoa  =parseFloat(inputmonHoa);
+        let Sinh =parseFloat(inputmonSinh);
+        let average = (ly + hoa + sinh)/3;
+        document.write(" MÔN LÝ : " + Ly);
+        document.write('<br/>');
+        document.write(" MÔN HÓA : " + Hoa);
+        document.write('<br/>');
+        document.write(" MÔN SINH : " + Sinh);
+        document.write('<br/>');
+        document.write("Điểm trung bình cả 3 môn là : " + average);
+    </script>
+</body>
+</html>

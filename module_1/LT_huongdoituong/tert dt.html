@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nokia = new Mobile();
+        let iphone = new Mobile();
+
+        nokia.power("on");
+        iphone.power("on");
+
+
+        nokia.draftMessage("Xin chào từ Nokia!");
+        nokia.sendMessage(iphone, nokia.draftMessage);
+
+        console.log(iphone.viewInbox());
+        class Mobile {
+            constructor() {
+                this.battery = 100;
+                this.draftMessage = null;
+                this.inbox = [];
+                this.sentMessages = [];
+                this.powerOn = false;
+            }
+
+            checkPower() {
+                return this.powerOn;
+            }
+
+            power(switchStatus) {
+                if (switchStatus.toLowerCase() === "on") {
+                    this.powerOn = true;
+                } else if (switchStatus.toLowerCase() === "off") {
+                    this.powerOn = false;
+                }
+                this.battery -= 1;
+            }
+
+            charge() {
+                if (this.battery < 100) {
+                    this.battery += 1;
+                }
+            }
+
+            draftMessage(message) {
+                if (this.powerOn) {
+                    this.draftMessage = message;
+                    this.battery -= 1;
+                }
+            }
+
+            receiveMessage(message) {
+                if (this.powerOn) {
+                    this.inbox.push(message);
+                    this.battery -= 1;
+                }
+            }
+
+            sendMessage(mobile, message) {
+                if (this.powerOn) {
+                    mobile.receiveMessage(message);
+                    this.sentMessages.push(message);
+                    this.battery -= 1;
+                }
+            }
+
+            viewInbox() {
+                if (this.powerOn) {
+                    return this.inbox;
+                }
+            }
+
+            viewSentMessages() {
+                if (this.powerOn) {
+                    return this.sentMessages;
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

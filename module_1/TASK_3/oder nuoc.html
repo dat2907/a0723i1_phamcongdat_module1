@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ordernuoc</title>
+</head>
+    <style>
+        .btn {
+            width: 200px;
+        }
+    </style>
+<body>
+        <input type="button" name="" class="btn" value="Coffe" onclick="run(this.value)">
+        <input type="button" name="" class="btn" value="Nước cam" onclick="run(this.value)">
+        <input type="button" name="" class="btn" value="Nước ép cà rốt" onclick="run(this.value)">
+        <input type="button" name="" class="btn" value="Nước ép cà chua" onclick="run(this.value)">
+        <input type="button" name="" class="btn" value="Nước lọc LAVIE" onclick="run(this.value)">
+        <input type="button" name="" class="btn" value="Nước dừa" onclick="run(this.value)">
+        <br>
+        <br>
+        <input type="button" name="" class="btn" value="Thanh toán" onclick="cal()">
+    <script>
+        var arr = ["Coffe","Nước cam","Nước ép cà rốt","Nước ép cà chua","Nước lọc LAVIE","Nước dừa"]
+        var unitPrice = ["20000","25000","25000","25000","5000","15000"]
+        var total = 0;
+        function run(param) {
+            for (let i = 0; i < arr.length; i++){
+                if ( param == arr[i]){
+                    let num = parseInt(prompt("Bạn chọn : " + arr[i] + "Có giá là : " + unitPrice[i] + " Đồng." + " Vui lòng nhập số lượng :"))
+                    total += num*unitPrice[i];
+                    console.log(total);
+                    break;
+                }
+            }
+        }
+        function cal(){
+            alert("Tổng tiền cần thanh toán là: " + total +"đ")
+            total = 0;
+            console.log(total);
+        }
+    </script>
+</body>
+</html>

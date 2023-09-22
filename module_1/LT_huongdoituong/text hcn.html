@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <input type="button" name="" id="" value="Start" onclick="run()">
+    </center>
+    <script>
+      class Rectangular {
+          constructor(width , height) {
+              this.width  = width;
+              this.height = height;
+          }
+          calP(){
+              return 2*(this.width + this.height);
+          }
+          calS(){
+              return this.width * this.height;
+          }
+          setHeight(height){
+              this.height = height ;
+          }
+          setWidth(width){
+              this.width = width ;
+          }
+          draw(){
+              var c = document.getElementById("myCanvas");
+              var ctx = c.getContext("2d");
+              ctx.moveTo(30,30);
+              ctx.lineTo(this.width+30,30);
+              ctx.moveTo(this.width+30,30);
+              ctx.lineTo(this.width+30,this.height+30);
+              ctx.moveTo(this.width+30,this.height+30);
+              ctx.lineTo(30,this.height+30);
+              ctx.moveTo(30,this.height+30);
+              ctx.lineTo(30,30);
+              ctx.stroke();
+          }
+      }
+      var rectangular;
+      function run() {
+          document.write('<center>');
+          document.write('<input type="button"name=""id="tryAgain"value="tryAgain"onclick="retry()">');
+          document.write('<canvas id="myCanvas"width="2000" height="1000"></canvas>');
+          document.write('</center>');
+
+          let wight = parseFloat(prompt("Please enter the length"));
+          let height = parseFloat(prompt("Please enter the width"));
+          rectangular = new Rectangular(wight,height);
+          alert("circumference is : " + rectangular.calP()+"area is : " + rectangular.calS());
+          rectangular.draw();
+      }
+      function retry(){
+          const removeCanvas = document.getElementById("myCanvas");
+          removeCanvas.remove();
+          let newWidth = parseFloat(prompt("Please enter the length"));
+          let newHeight= parseFloat(prompt("Please enter the width"));
+          rectangular.setWidth(newWidth);
+          rectangular.setHeight(newHeight);
+          document.write('<canvas id="myCanvas" width="2000" height="1000"></canvas>');
+          rectangular.draw();
+      }
+    </script>
+</body>
+</html>

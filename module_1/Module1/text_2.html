@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question2</title>
+</head>
+<body>
+<script>
+
+    function insertNumberToArray(array,number, index) {
+        let num = parseInt(prompt("Enter your number"));
+        let ind = parseInt(prompt("Enter your index to check"));
+        if (ind < 0 || ind > array.length) {
+            return array;
+        }
+        else {
+            array.splice(ind,0,num);
+            return array;
+        }
+    }
+
+    // insertNumberToArray(index,number);
+
+</script>
+</body>
+</html>

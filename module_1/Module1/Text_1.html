@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question1</title>
+</head>
+<body>
+
+<script>
+    function findAvg(marks){
+        let avg = 0;
+        let sum = 0;
+        for(let i=0;i<marks.length;i++){
+            sum += marks[i];
+            avg = sum/(i+1);
+        }
+        // document.write(avg);
+        return avg;
+    }
+
+    findAvg([1,2,3,4]);
+    //test
+    alert(avg);
+
+</script>
+</body>
+</html>

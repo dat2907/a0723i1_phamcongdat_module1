@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp điện thoại</title>
+    <style>
+      .custom-border {
+        width: 350px;
+        height: 600px;
+        border-radius: 4px;
+        border: 2px black solid;
+      }
+      .custom-container {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+</head>
+<body>
+  <div class="custom-container">
+    <table class="custom-border" cellpadding="0px" id="mobileMain1">
+      <caption>Điện thoại 1 </caption>
+      <tr style="height: 10px">
+        <td align="right" valign="top" style="border-bottom: 1px solid black;display: none">
+          <p class="pinPercent">40%</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td data-name="contentMain" align="right" valign="top" style="border-bottom: 1px solid black;display: none">
+          <h1 class="mobileNameMain" style="display: none">iPhone 14prm của đạtfit</h1>
+          <pre class="contentShowmain"style="display: none">DRAFT MESSAGE</pre>
+          <h2 class="statusMobile"style="display: none"></h2>
+        </td>
+      </tr>
+
+      <tr style="height: 100px">
+        <td data-name="draftMessageZone" style="display: none">
+          <textarea cols="30" rows="5" name="contenMessTemp"></textarea>
+          <button name="mobile1"onclick="sendMessToMobileOther(this)" style="width: 90px;height: 80%;">Send</button>
+        </td>
+      </tr>
+    </table>
+
+    <table class="custom-container"style="border: none">
+      <!--        <caption>Bảng điều khiển điện thoại 1</caption>-->
+      <tr>
+        <td><button onclick="turnPower(this)"name="mobile1"ON/OFF></button></td>
+      </tr>
+
+      <tr>
+        <td><button onclick="turnDraft(this)"name="mobile1">DRAFT MESSAGE</button></td>
+      </tr>
+
+      <tr>
+        <td><button onclick="turnInbox(this)"name="mobile1">INBOX</button></td>
+      </tr>
+
+      <tr>
+        <td><button onclick="turnSent(this)"name="mobile1">SENT</button></td>
+      </tr>
+
+      <tr>
+        <td><button onclick="turnCharging(this)"name="mobile1">CHARGING</button></td>
+      </tr>
+
+      <tr>
+        <td><button onclick="checkStatusMobile(this)"name="mobile1">CHECK STATUS MOBILE</button></td>
+      </tr>
+    </table>
+
+    <table class="custom-border"cellpadding="0px" id="mobileMian2">
+      <caption>Điện thoai 2 </caption>
+      <tr style="height: 10px">
+        <td align="right"valign="top"style="border-bottom:1px solid black;display: none">
+          <p class="pinPercent">30%</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td data-name="contentMain" align="right" valign="top" style="display: none">
+          <h1 class="mobileNameMain" style="display: none">Nokia Ultra</h1>
+          <pre class="contentShowMain" style="display: none"DRAFT MESSAGE></pre>
+          <h2 class="statusMobile" style="display: none"></h2>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
